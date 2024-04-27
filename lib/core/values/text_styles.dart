@@ -6,7 +6,7 @@ import 'package:weather_app/core/theme/app_color.dart';
 final style_white_w300_122_circular = TextStyle(
   color: whiteColor,
   fontWeight: FontWeight.w300,
-  fontSize: 122,
+  fontSize: 100,
   fontFamily: GoogleFonts.montserrat().fontFamily,
 );
 

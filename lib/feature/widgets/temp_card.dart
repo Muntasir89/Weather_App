@@ -27,6 +27,7 @@ class TempCard extends StatelessWidget {
           end: Alignment.bottomRight,
           colors: [whiteColor.withOpacity(0.2), whiteColor.withOpacity(0)],
         ),
+        border: Border.all(width: 1, color: whiteColor.withOpacity(0.2)),
         borderRadius: BorderRadius.circular(size50),
       ),
       child: Column(
