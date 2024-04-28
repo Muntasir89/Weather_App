@@ -46,6 +46,7 @@ const no_padding = EdgeInsets.zero;
 const all2 = EdgeInsets.all(2);
 const all5 = EdgeInsets.all(5);
 const all10 = EdgeInsets.all(10);
+const symmetric_h10 = EdgeInsets.symmetric(horizontal: 10);
 const symmetric_h10_v10 = EdgeInsets.symmetric(horizontal: 10, vertical: 10);
 const symmetric_h30_v10 = EdgeInsets.symmetric(horizontal: 30, vertical: 10);
 const only_t5 = EdgeInsets.only(top: 10);

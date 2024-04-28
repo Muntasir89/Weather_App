@@ -11,10 +11,10 @@ import 'package:weather_app/core/values/app_assets.dart';
 import 'package:weather_app/core/values/app_strings.dart';
 import 'package:weather_app/core/values/text_styles.dart';
 import 'package:weather_app/core/values/values.dart';
-import 'package:weather_app/feature/widgets/custom_button.dart';
-import 'package:weather_app/feature/widgets/temp_card.dart';
-import 'package:weather_app/feature/widgets/uv_index_card.dart';
-import 'package:weather_app/feature/widgets/sunrise_sunset_card.dart';
+import 'package:weather_app/feature/weather/presentation/widgets/custom_button.dart';
+import 'package:weather_app/feature/weather/presentation/widgets/temp_card.dart';
+import 'package:weather_app/feature/weather/presentation/widgets/uv_index_card.dart';
+import 'package:weather_app/feature/weather/presentation/widgets/sunrise_sunset_card.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
               "Dhaka",
               style: style_white_w700_32_inter,
             ),
-            gap_v20,
+            // gap_,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
                   size: size18,
                   color: whiteColor.withOpacity(0.5),
                 ),
-                gap_h10,
+                gap_h5,
                 Text(
                   "Current Location",
                   style: style_white_w400_12_circular,
@@ -83,7 +83,8 @@ class HomePage extends StatelessWidget {
                 CustomButton(title: nextDays, color: blackColor, opacity: 0.1),
               ],
             ),
-            SizedBox(
+            Container(
+              padding: symmetric_h10,
               height: size150,
               child: ListView.builder(
                 itemCount: 10,
