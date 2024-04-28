@@ -1,16 +1,8 @@
 # weather_app
+This is a flutter weather app which provides wheather data based on location. This project was created based on popular flutter clean architecture.
 
-A new Flutter project.
+## Screenshot
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="left">
+  <img style="margin-left: 20px;" src="https://github.com/Muntasir89/Weather_App/assets/78687005/7f6c9ce0-b280-4f2f-a415-da8fd22697a7" alt="image_description" width="270" height="600"/>
+</p>
