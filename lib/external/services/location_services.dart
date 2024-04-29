@@ -1,9 +1,15 @@
 import 'package:location/location.dart';
 import 'package:permission_handler/permission_handler.dart' as handler;
+import 'package:weather_app/core/error/exceptions.dart';
+import 'package:weather_app/feature/weather/domain/entities/location_entity.dart';
 
-class LocationService {
-  LocationService.init();
-  static LocationService instance = LocationService.init();
+abstract interface class LocationService {
+  Future<LocationEntity> getUserLocation();
+}
+
+class LocationServiceImpl extends LocationService {
+  // LocationService.init();
+  // static LocationService instance = LocationService.init();
 
   final Location _location = Location();
   Future<bool> checkForServiceAvailability() async {
@@ -11,7 +17,9 @@ class LocationService {
     if (isEnabled) {
       return Future.value(true);
     }
+
     isEnabled = await _location.requestService();
+
     if (isEnabled) {
       return Future.value(true);
     }
@@ -30,25 +38,23 @@ class LocationService {
     }
     if (status == PermissionStatus.deniedForever) {
       // "Permission Needed" "We use permission to get your location in order to give your service"
-      return false;
+      throw const CustomException("Permission for location denied");
     }
 
     return Future.value(true);
   }
 
-  Future<void> getUserLocation() async {
+  @override
+  Future<LocationEntity> getUserLocation() async {
     if (!(await checkForServiceAvailability())) {
-      // Here write something for not available for service
-      // controller.errorDescription.value = "Service not enabled";
-      // controller.updateIsAccessingLocation(false);
-      return;
+      throw const CustomException("Location service not enabled");
     }
     if (!(await checkForPermission())) {
-      // "Permission not given";
-      return;
+      throw const CustomException("Permission for location not given");
     }
 
     final LocationData data = await _location.getLocation();
-    // Location data got
+    return LocationEntity(
+        name: '', longitude: data.longitude!, latitude: data.latitude!);
   }
 }
